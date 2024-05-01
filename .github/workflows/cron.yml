@@ -1,0 +1,36 @@
+name: Run Python script and append output to file
+
+on:
+  schedule:
+    - cron: "0 13 * * *"
+
+jobs:
+  run_python_script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+
+    - name: Run Python script
+      run: python tefas.py >> daily_result.txt
+
+    - name: Commit and push changes
+      env:
+        GH_EMAIL: ${{ secrets.GH_EMAIL }}
+        GH_USERNAME: ${{ secrets.GH_USERNAME }}
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      run: |
+        git config --local user.email $GH_EMAIL
+        git config --local user.name $GH_USERNAME
+        git add daily_result.txt
+        git commit -m "Update Daily Result file with script output"
+        git push
