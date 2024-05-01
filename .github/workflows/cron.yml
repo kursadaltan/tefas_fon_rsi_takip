@@ -52,4 +52,8 @@ jobs:
         git config --local user.name $GH_USERNAME
         git add daily_result.txt
         git commit -m "Update Daily Result file with script output"
-        git push
+     
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GH_TOKEN }}
