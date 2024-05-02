@@ -85,4 +85,4 @@ for fon_kodu, group in grouped_df:
 
 # Sonuçları yazdır
 for fon_kodu, son_rsi_degeri in filtered_group.items():
-    print(f"Fon Kodu: {fon_kodu}, Son RSI Değeri: {son_rsi_degeri}")
+    print(f"Tarih: {bugun}, Fon Kodu: {fon_kodu}, Son RSI Değeri: {son_rsi_degeri}")
