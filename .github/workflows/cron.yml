@@ -49,8 +49,8 @@ jobs:
       run : |
         git clone  https://kursadaltan:$GH_TOKEN@github.com/kursadaltan/tefas_fon_rsi_takip -b main
         cd tefas_fon_rsi_takip
-        git config --global user.email $GH_EMAIL
-        git config --global user.name $GH_USERNAME
+        git config --global user.email "$GH_EMAIL"
+        git config --global user.name "$GH_USERNAME"
         git add .
         git commit --allow-empty -m "add daily report"
         git push origin main   
