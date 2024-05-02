@@ -22,16 +22,16 @@ on:
         description: 'Environment to run tests against'
         type: environment
         required: true
-
-permissions:                    # Global permissions configuration starts here
-  contents: write                # 'read' access to repository contents
-  pull-requests: write          # 'write' access to pull requests
+        
 jobs:
   run_python_script:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        ref: ${{ github.head_ref }}
+        fetch-depth: 0
 
     - name: Set up Python
       uses: actions/setup-python@v2
@@ -44,15 +44,14 @@ jobs:
     - name: Run Python script
       run: python tefas.py >> daily_result.txt
 
-    - name: Set up Git
-      env:
-        GH_EMAIL: ${{ secrets.GH_EMAIL }}
-        GH_USERNAME: ${{ secrets.GH_USERNAME }}
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+    - name: Commit Files
       run: |
-        git config --global user.email $GH_EMAIL
-        git config --global user.name $GH_USERNAME
-        git remote set-url origin https://kursadaltan:${{ secrets.GH_TOKEN }}@github.com/kursadaltan/tefas_fon_rsi_takip
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
         git add daily_result.txt
         git commit --allow-empty -m "Update Daily Result file with script output"
-        git push origin main
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        force_with_lease: true
