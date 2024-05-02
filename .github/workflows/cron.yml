@@ -39,12 +39,6 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Install dependencies
-      run: pip install -r requirements.txt
-
-    - name: Run Python script
-      run: python tefas.py >> daily_result.txt
-
     - name : Update Document
       env:
         GH_EMAIL: ${{ secrets.GH_EMAIL }}
@@ -55,6 +49,8 @@ jobs:
         cd tefas_fon_rsi_takip
         git config --global user.email "$GH_EMAIL"
         git config --global user.name kursadaltan
-        git add .
+        pip install -r requirements.txt
+        python tefas.py >> daily_result.txt
+        git add daily_result.txt
         git commit --allow-empty -m "add daily report"
         git push origin main   
