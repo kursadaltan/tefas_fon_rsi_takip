@@ -1,1 +1,4 @@
 Tarih: 2024-05-14, Fon Kodu: TTE, Son RSI Değeri: 35.918799695259096
+Tarih: 2024-05-15, Fon Kodu: ICZ, Son RSI Değeri: 38.413625061729086
+Tarih: 2024-05-15, Fon Kodu: TTE, Son RSI Değeri: 33.058377834885476
+Tarih: 2024-05-15, Fon Kodu: YHZ, Son RSI Değeri: 38.069690896901065
