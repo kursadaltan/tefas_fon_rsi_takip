@@ -53,3 +53,4 @@ Tarih: 2024-06-06, Fon Kodu: ICZ, Son RSI Değeri: 37.46225198729066
 Tarih: 2024-06-06, Fon Kodu: TTE, Son RSI Değeri: 37.15388727514167
 Tarih: 2024-06-06, Fon Kodu: YHZ, Son RSI Değeri: 37.21559203193254
 Tarih: 2024-06-07, Fon Kodu: BUY, Son RSI Değeri: 36.07993539254339
+Tarih: 2024-06-08, Fon Kodu: BUY, Son RSI Değeri: 35.865250346807
