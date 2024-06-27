@@ -140,3 +140,5 @@ Tarih: 2024-06-18, Fon Kodu: ZSF, Son RSI Değeri: 38.948746343895
 Tarih: 2024-06-19, Fon Kodu: BUY, Son RSI Değeri: 35.97286766517183
 Tarih: 2024-06-19, Fon Kodu: ZSF, Son RSI Değeri: 38.948746343895
 Tarih: 2024-06-20, Fon Kodu: BUY, Son RSI Değeri: 38.65250743599118
+Tarih: 2024-06-27, Fon Kodu: AOY, Son RSI Değeri: 39.596192303315135
+Tarih: 2024-06-27, Fon Kodu: BUY, Son RSI Değeri: 39.37703092079016
