@@ -1,8 +1,8 @@
 name: Run Python script and append output to file
 
 on:
-  schedule:
-    - cron: "0 13 * * *"
+  #schedule:
+   # - cron: "0 13 * * *"
   workflow_dispatch:
      inputs:
       logLevel:
